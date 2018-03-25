@@ -1,0 +1,73 @@
+ex1：
+    INCAR越简单越好
+    ISMEAR:半导体和绝缘体,绝对不大于零，精确就取-5，体系大就取0
+           金属，一般取1.
+           取0可以满足大部分体系的要求
+           DOS能带计算，取-5用于获得精确信息
+    SIGMA:金属或非金属在ISMEAR=0时，取0.1或0.2即可。
+          测试标准：grep 'entropy T' OUTCAR，得到的能量除以体系中的原子数目再和0.001eV比较，如果小于，取值ok，如果大于就换一个。
+ex3-4：
+    批量输入输出：sed
+ex5:
+    OSZICAR
+    E0(energy sigma->0) 我们最终需要的体系能量
+ex6:
+    OUTCAR
+ex8：
+    SPIN。MAGMOM。氧原子计算的磁性
+ex9：
+    EDIFF,EDIFFG
+ex10：
+    数据库。搭建分子
+ex11：
+    MAGMOM
+ex12:
+    O2优化
+    优化参数设置
+    IBRION: 3.C初始结构很差时。 2.可靠的选择。 1.小范围内稳定结构的搜索
+ex15：
+    POTIM：如果原子初始距离很近，则POTIM应该取小点
+ex16-17:
+    减少机时，批量输出，批量测试encut，sigma
+ex19：
+    k点数目奇数和偶数相同
+ex20:
+    kpoints的设置
+ex21:
+    NPAR,NCORE的设置：NCORE=单节点核数
+ex22：
+    构建分子POSCAR，chemspider，notepad，p4vasp使用
+ex23：
+    分子震动频率
+ex24：
+    利用vim，p4vasp固定poscar的原子
+ex25：
+     分子震动频率，零点能矫正
+ex27:
+     频率计算时间成本
+ex28:
+     cd的灵活运用
+ex29-30:
+     写脚本，生成KPOINT,POTCAR
+ex32：
+     Birch-Murnaghan方程，
+ex33-35：
+     利用方程编程优化晶格参数
+ex36：
+     直接优化晶格参数，ISIF要取大一点
+ex37-41:
+     DOS,暂时不学
+ex42-46：
+     表面能计算，slab模型，POSCAR中direct坐标转换成cartesian坐标
+ex47-48：
+     表面能计算公式，弛豫能, 对称slb和非对称slab
+ex49-50:
+     计算功函数
+ex51-52:
+      批量检测真空层厚度够不够
+ex53：
+      bader电荷计算
+ex56-59:
+     吸附能计算，用p4vasp来multiply poscar
+ex60:
+     构建间隙原子POSCAR
